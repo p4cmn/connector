@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QKeyEvent>
 #include <QTextEdit>
 #include "logger.h"
 
@@ -19,6 +20,9 @@ public:
   QString getSelectedFirstPort() const;
   QString getSelectedSecondPort() const;
   QTextEdit* getLogWidget() const;
+
+protected:
+  void keyPressEvent(QKeyEvent* event) override;
 
 signals:
   void sendButtonClicked(const QByteArray& data);

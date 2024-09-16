@@ -10,7 +10,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->portSelector1->addItem(info.portName());
     ui->portSelector2->addItem(info.portName());
   }
-
   ui->paritySelector->addItem("None");
   ui->paritySelector->addItem("Even");
   ui->paritySelector->addItem("Odd");
@@ -41,6 +40,14 @@ QString MainWindow::getSelectedSecondPort() const {
 
 QTextEdit* MainWindow::getLogWidget() const {
   return ui->logWidget;
+}
+
+void MainWindow::keyPressEvent(QKeyEvent *event) {
+  if (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter) {
+    ui->inputField->setText(ui->inputField->text() + "\\r");
+  } else {
+    QMainWindow::keyPressEvent(event);
+  }
 }
 
 void MainWindow::onSendButtonClicked() {
