@@ -267,6 +267,7 @@ Makefile: ../../serialport.pro D:/OTHER/QT/6.7.2/mingw_64/mkspecs/win32-g++/qmak
 		D:/OTHER/QT/6.7.2/mingw_64/mkspecs/features/qt_config.prf \
 		D:/OTHER/QT/6.7.2/mingw_64/mkspecs/win32-g++/qmake.conf \
 		D:/OTHER/QT/6.7.2/mingw_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		D:/OTHER/QT/6.7.2/mingw_64/mkspecs/features/exclusive_builds.prf \
 		D:/OTHER/QT/6.7.2/mingw_64/mkspecs/features/toolchain.prf \
 		D:/OTHER/QT/6.7.2/mingw_64/mkspecs/features/default_pre.prf \
@@ -297,7 +298,6 @@ Makefile: ../../serialport.pro D:/OTHER/QT/6.7.2/mingw_64/mkspecs/win32-g++/qmak
 		D:/OTHER/QT/6.7.2/mingw_64/lib/Qt6SerialPort.prl \
 		D:/OTHER/QT/6.7.2/mingw_64/lib/Qt6Core.prl \
 		D:/OTHER/QT/6.7.2/mingw_64/lib/Qt6EntryPoint.prl \
-		.qmake.stash \
 		D:/OTHER/QT/6.7.2/mingw_64/mkspecs/features/build_pass.prf
 	$(QMAKE) -o Makefile ../../serialport.pro -spec win32-g++ CONFIG+=debug CONFIG+=qml_debug
 D:/OTHER/QT/6.7.2/mingw_64/mkspecs/features/spec_pre.prf:
@@ -497,6 +497,7 @@ D:/OTHER/QT/6.7.2/mingw_64/mkspecs/features/qt_functions.prf:
 D:/OTHER/QT/6.7.2/mingw_64/mkspecs/features/qt_config.prf:
 D:/OTHER/QT/6.7.2/mingw_64/mkspecs/win32-g++/qmake.conf:
 D:/OTHER/QT/6.7.2/mingw_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 D:/OTHER/QT/6.7.2/mingw_64/mkspecs/features/exclusive_builds.prf:
 D:/OTHER/QT/6.7.2/mingw_64/mkspecs/features/toolchain.prf:
 D:/OTHER/QT/6.7.2/mingw_64/mkspecs/features/default_pre.prf:
@@ -527,7 +528,6 @@ D:/OTHER/QT/6.7.2/mingw_64/lib/Qt6Gui.prl:
 D:/OTHER/QT/6.7.2/mingw_64/lib/Qt6SerialPort.prl:
 D:/OTHER/QT/6.7.2/mingw_64/lib/Qt6Core.prl:
 D:/OTHER/QT/6.7.2/mingw_64/lib/Qt6EntryPoint.prl:
-.qmake.stash:
 D:/OTHER/QT/6.7.2/mingw_64/mkspecs/features/build_pass.prf:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ../../serialport.pro -spec win32-g++ CONFIG+=debug CONFIG+=qml_debug

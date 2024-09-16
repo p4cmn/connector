@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTextEdit>
+#include "logger.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,12 +16,18 @@ public:
   explicit MainWindow(QWidget* parent = nullptr);
   ~MainWindow();
 
+  QString getSelectedFirstPort() const;
+  QString getSelectedSecondPort() const;
+  QTextEdit* getLogWidget() const;
+
 signals:
   void sendButtonClicked(const QByteArray& data);
   void portsSelected(const QString& firstPort, const QString& secondPort);
+  void paritySelected(const QString &parity);
 
 public slots:
   void updateOutputField(const QByteArray& data);
+  void updateStatus(int baudRate, int bytesTransferred);
 
 private slots:
   void onSendButtonClicked();

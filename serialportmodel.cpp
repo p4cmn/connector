@@ -3,7 +3,9 @@
 SerialPortModel::SerialPortModel(QObject *parent)
     : QObject(parent),
     firstPort(new QSerialPort(this)),
-    secondPort(new QSerialPort(this)) {}
+    secondPort(new QSerialPort(this)),
+    bytesTransferred(0)
+{}
 
 SerialPortModel::~SerialPortModel() {
   if (firstPort->isOpen()) firstPort->close();
@@ -20,9 +22,25 @@ void SerialPortModel::setPorts(const QString& firstPortName, const QString& seco
   }
 }
 
+void SerialPortModel::setParity(const QString &parity) {
+  if (parity == "None") {
+    firstPort->setParity(QSerialPort::NoParity);
+    secondPort->setParity(QSerialPort::NoParity);
+  } else if (parity == "Even") {
+    firstPort->setParity(QSerialPort::EvenParity);
+    secondPort->setParity(QSerialPort::EvenParity);
+  } else if (parity == "Odd") {
+    firstPort->setParity(QSerialPort::OddParity);
+    secondPort->setParity(QSerialPort::OddParity);
+  }
+}
+
 void SerialPortModel::sendData(const QByteArray& data) {
   if (firstPort->isOpen()) {
+    bytesTransferred = 0;
     firstPort->write(data);
+    bytesTransferred = data.size();
+    emit statusUpdated(firstPort->baudRate(), bytesTransferred);
   }
 }
 
