@@ -19,6 +19,7 @@ int main(int argc, char *argv[]) {
 
   SerialPortController controller(&model, &view, &logger, validPortPairs);
 
+  view.setWindowIcon(QIcon(":/icons/comIcon.ico"));
   view.show();
 
   return a.exec();

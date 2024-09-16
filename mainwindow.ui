@@ -115,13 +115,14 @@
                </property>
                <property name="styleSheet">
                 <string notr="true">QComboBox {
-    background-color: #ffffff; /* Белый фон */
-    border: 1px solid #ccc; /* Серая рамка */
+    background-color: #2B2B2B; /* Темный фон */
+    border: 2px solid #4F4F4F; /* Светло-серая рамка с толщиной 2px */
     border-radius: 5px; /* Скругленные углы */
     padding: 5px; /* Внутренние отступы */
-	color: #333; /* Темно-серый текст на светлом фоне */
+	color: #FFFFFF; /* Белый текст */
     font-size: 16px;
-}</string>
+}
+</string>
                </property>
               </widget>
              </item>
@@ -220,12 +221,14 @@
             <widget class="QLineEdit" name="inputField">
              <property name="styleSheet">
               <string notr="true">QLineEdit {
-    background-color: #FFFFFF; /* Белый фон */
-    color: #000000; /* Черный текст */
-    border: 1px solid #4F4F4F; /* Светло-серая рамка */
+    background-color: #2B2B2B; /* Темный фон */
+    color: #FFFFFF; /* Белый текст */
+    border: 2px solid #4F4F4F; /* Светло-серая рамка с толщиной 2px */
     border-radius: 5px; /* Скругленные углы */
     padding: 5px; /* Внутренние отступы */
-}</string>
+}
+
+</string>
              </property>
              <property name="text">
               <string/>
@@ -394,13 +397,14 @@ QPushButton:hover {
             </property>
             <property name="styleSheet">
              <string notr="true">QComboBox {
-    background-color: #ffffff; /* Белый фон */
-    border: 1px solid #ccc; /* Серая рамка */
+    background-color: #2B2B2B; /* Темный фон */
+    border: 2px solid #4F4F4F; /* Светло-серая рамка с толщиной 2px */
     border-radius: 5px; /* Скругленные углы */
     padding: 5px; /* Внутренние отступы */
-	color: #333; /* Темно-серый текст на светлом фоне */
-    font-size: 14px;
-}</string>
+	color: #FFFFFF; /* Белый текст */
+    font-size: 16px;
+}
+</string>
             </property>
            </widget>
           </item>
@@ -522,13 +526,14 @@ QPushButton:hover {
                </property>
                <property name="styleSheet">
                 <string notr="true">QComboBox {
-    background-color: #ffffff; /* Белый фон */
-    border: 1px solid #ccc; /* Серая рамка */
+    background-color: #2B2B2B; /* Темный фон */
+    border: 2px solid #4F4F4F; /* Светло-серая рамка с толщиной 2px */
     border-radius: 5px; /* Скругленные углы */
     padding: 5px; /* Внутренние отступы */
-	color: #333; /* Темно-серый текст на светлом фоне */
+	color: #FFFFFF; /* Белый текст */
     font-size: 16px;
-}</string>
+}
+</string>
                </property>
               </widget>
              </item>
@@ -627,12 +632,13 @@ QPushButton:hover {
             <widget class="QTextEdit" name="outputField">
              <property name="styleSheet">
               <string notr="true">QTextEdit {
-    background-color: #FFFFFF; /* Белый фон */
-    color: #000000; /* Черный текст */
-    border: 1px solid #4F4F4F; /* Светло-серая рамка */
+    background-color: #2B2B2B; /* Темный фон */
+    color: #FFFFFF; /* Белый текст */
+    border: 2px solid #4F4F4F; /* Светло-серая рамка с толщиной 2px */
     border-radius: 5px; /* Скругленные углы */
     padding: 5px; /* Внутренние отступы */
-}</string>
+}
+</string>
              </property>
              <property name="html">
               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -740,6 +746,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
          </item>
          <item>
           <widget class="QLabel" name="label_4">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
              <width>201</width>
@@ -825,7 +837,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <bool>true</bool>
            </property>
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
