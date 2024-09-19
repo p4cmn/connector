@@ -96,13 +96,11 @@ public:
     QHBoxLayout *horizontalLayout_10;
     QSpacerItem *horizontalSpacer_15;
     QLabel *label_4;
-    QSpacerItem *horizontalSpacer_17;
     QLabel *speedLabel;
     QSpacerItem *horizontalSpacer_19;
     QHBoxLayout *horizontalLayout_11;
     QSpacerItem *horizontalSpacer_16;
     QLabel *label_5;
-    QSpacerItem *horizontalSpacer_18;
     QLabel *bytesLabel;
     QSpacerItem *horizontalSpacer_20;
     QHBoxLayout *horizontalLayout_8;
@@ -521,7 +519,7 @@ public:
 
         label_4 = new QLabel(frame1);
         label_4->setObjectName("label_4");
-        QSizePolicy sizePolicy1(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Preferred);
+        QSizePolicy sizePolicy1(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Preferred);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(label_4->sizePolicy().hasHeightForWidth());
@@ -533,10 +531,6 @@ public:
 "}"));
 
         horizontalLayout_10->addWidget(label_4);
-
-        horizontalSpacer_17 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
-
-        horizontalLayout_10->addItem(horizontalSpacer_17);
 
         speedLabel = new QLabel(frame1);
         speedLabel->setObjectName("speedLabel");
@@ -572,10 +566,6 @@ public:
 "}"));
 
         horizontalLayout_11->addWidget(label_5);
-
-        horizontalSpacer_18 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
-
-        horizontalLayout_11->addItem(horizontalSpacer_18);
 
         bytesLabel = new QLabel(frame1);
         bytesLabel->setObjectName("bytesLabel");

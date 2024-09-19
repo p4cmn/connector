@@ -19,7 +19,9 @@ HEADERS += \
     logger.h \
     mainwindow.h \
     serialportcontroller.h \
-    serialportmodel.h
+    serialportmodel.h \
+    serialportscanner.h \
+    serialporttester.h
 
 FORMS += \
     mainwindow.ui
@@ -31,3 +33,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
   resources.qrc
+
+DISTFILES += \
+  applicationIcon.rc
+
+RC_FILE += applicationIcon.rc
