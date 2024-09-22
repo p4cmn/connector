@@ -1,0 +1,10 @@
+debug/frame.o
+debug/logger.o
+debug/main.o
+debug/mainwindow.o
+debug/serialportcontroller.o
+debug/serialportmodel.o
+debug/qrc_resources.o
+debug/moc_mainwindow.o
+debug/moc_serialportcontroller.o
+debug/moc_serialportmodel.o

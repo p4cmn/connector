@@ -1,6 +1,6 @@
 #include "serialportmodel.h"
 
-SerialPortModel::SerialPortModel(QObject *parent)
+SerialPortModel::SerialPortModel(QObject* parent)
     : QObject(parent),
     firstPort(new QSerialPort(this)),
     secondPort(new QSerialPort(this)),
@@ -16,13 +16,12 @@ void SerialPortModel::setPorts(const QString& firstPortName, const QString& seco
   firstPort->setPortName(firstPortName);
   secondPort->setPortName(secondPortName);
 
-  if (firstPort->open(QIODevice::ReadWrite)
-      && secondPort->open(QIODevice::ReadWrite)) {
+  if (firstPort->open(QIODevice::ReadWrite) && secondPort->open(QIODevice::ReadWrite)) {
     connect(secondPort, &QSerialPort::readyRead, this, &SerialPortModel::readData);
   }
 }
 
-void SerialPortModel::setParity(const QString &parity) {
+void SerialPortModel::setParity(const QString& parity) {
   if (parity == "None") {
     firstPort->setParity(QSerialPort::NoParity);
     secondPort->setParity(QSerialPort::NoParity);

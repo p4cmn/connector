@@ -103,6 +103,14 @@ public:
     QLabel *label_5;
     QLabel *bytesLabel;
     QSpacerItem *horizontalSpacer_20;
+    QHBoxLayout *horizontalLayout_2;
+    QSpacerItem *horizontalSpacer_17;
+    QLabel *label_9;
+    QSpacerItem *horizontalSpacer_18;
+    QHBoxLayout *horizontalLayout_17;
+    QSpacerItem *horizontalSpacer_33;
+    QTextEdit *frameTextEdit;
+    QSpacerItem *horizontalSpacer_34;
     QHBoxLayout *horizontalLayout_8;
     QSpacerItem *horizontalSpacer_11;
     QTextEdit *logWidget;
@@ -583,6 +591,50 @@ public:
 
         verticalLayout_2->addLayout(horizontalLayout_11);
 
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName("horizontalLayout_2");
+        horizontalSpacer_17 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_17);
+
+        label_9 = new QLabel(frame1);
+        label_9->setObjectName("label_9");
+
+        horizontalLayout_2->addWidget(label_9);
+
+        horizontalSpacer_18 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_18);
+
+
+        verticalLayout_2->addLayout(horizontalLayout_2);
+
+        horizontalLayout_17 = new QHBoxLayout();
+        horizontalLayout_17->setObjectName("horizontalLayout_17");
+        horizontalSpacer_33 = new QSpacerItem(40, 20, QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_17->addItem(horizontalSpacer_33);
+
+        frameTextEdit = new QTextEdit(frame1);
+        frameTextEdit->setObjectName("frameTextEdit");
+        frameTextEdit->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
+"    background-color: #2B2B2B; /* \320\242\320\265\320\274\320\275\321\213\320\271 \321\204\320\276\320\275 */\n"
+"    color: #FFFFFF; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
+"    border: 2px solid #4F4F4F; /* \320\241\320\262\320\265\321\202\320\273\320\276-\321\201\320\265\321\200\320\260\321\217 \321\200\320\260\320\274\320\272\320\260 \321\201 \321\202\320\276\320\273\321\211\320\270\320\275\320\276\320\271 2px */\n"
+"    border-radius: 5px; /* \320\241\320\272\321\200\321\203\320\263\320\273\320\265\320\275\320\275\321\213\320\265 \321\203\320\263\320\273\321\213 */\n"
+"    padding: 5px; /* \320\222\320\275\321\203\321\202\321\200\320\265\320\275\320\275\320\270\320\265 \320\276\321\202\321\201\321\202\321\203\320\277\321\213 */\n"
+"}\n"
+""));
+
+        horizontalLayout_17->addWidget(frameTextEdit);
+
+        horizontalSpacer_34 = new QSpacerItem(40, 20, QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_17->addItem(horizontalSpacer_34);
+
+
+        verticalLayout_2->addLayout(horizontalLayout_17);
+
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setObjectName("horizontalLayout_8");
         horizontalSpacer_11 = new QSpacerItem(40, 20, QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Minimum);
@@ -649,6 +701,7 @@ public:
         speedLabel->setText(QCoreApplication::translate("MainWindow", "N/A", nullptr));
         label_5->setText(QCoreApplication::translate("MainWindow", "Number of bytes transferred: ", nullptr));
         bytesLabel->setText(QCoreApplication::translate("MainWindow", "N/A", nullptr));
+        label_9->setText(QCoreApplication::translate("MainWindow", "Frame:", nullptr));
     } // retranslateUi
 
 };

@@ -1,21 +1,21 @@
 #include "logger.h"
 #include <QDateTime>
+#include <QDebug>
 
+Logger::Logger(ILogOutput* output) : logOutput(output) {}
 
-Logger::Logger() : logWidget(nullptr) {}
-
-void Logger::setLogWidget(QTextEdit* widget) {
-  logWidget = widget;
+void Logger::setLogOutput(ILogOutput* output) {
+  logOutput = output;
 }
 
 void Logger::log(const QString& message, LogLevel level) {
   QString formattedMessage = QString("[%1] [%2] %3")
-  .arg(QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss"))
-  .arg(logLevelToString(level))
-  .arg(message);
+  .arg(QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss"),
+       logLevelToString(level),
+       message);
 
-  if (logWidget) {
-    logWidget->append(formattedMessage);
+  if (logOutput) {
+    logOutput->write(formattedMessage);
   } else {
     qDebug() << formattedMessage;
   }

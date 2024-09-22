@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->portSelector1->addItem(info.portName());
     ui->portSelector2->addItem(info.portName());
   }
+
   ui->paritySelector->addItem("None");
   ui->paritySelector->addItem("Even");
   ui->paritySelector->addItem("Odd");
@@ -38,9 +39,38 @@ QString MainWindow::getSelectedSecondPort() const {
   return ui->portSelector2->currentText();
 }
 
+QString MainWindow::getReceivedData() const {
+  return ui->outputField->toPlainText();
+}
+
 QTextEdit* MainWindow::getLogWidget() const {
   return ui->logWidget;
 }
+
+void MainWindow::clearFrameStatus() {
+  ui->frameTextEdit->clear();
+}
+
+void MainWindow::displayFrameInStatus(const Frame& frame) {
+  QString frameInfo = QString("Flag: %1%2 | Source: %3 | Destination: %4 | Data: %5 | FCS: %6")
+  .arg(static_cast<char>(frame.flag[0]))
+      .arg(static_cast<char>(frame.flag[1]))
+      .arg(frame.sourceAddress)
+      .arg(frame.destinationAddress)
+      .arg(QString::fromUtf8(reinterpret_cast<const char*>(frame.data.data()), DATA_SIZE).trimmed())
+      .arg(frame.FCS);
+  ui->frameTextEdit->append(frameInfo);
+}
+
+void MainWindow::displayRawFrameInStatus(const QByteArray& rawFrameData) {
+  QString rawFrameInfo = QString("Raw Frame Data: %1").arg(QString::fromUtf8(rawFrameData.toHex(' ')));
+  ui->frameTextEdit->append(rawFrameInfo);
+}
+
+void MainWindow::displayDataInOutput(const QByteArray& data) {
+  ui->outputField->setText(QString::fromUtf8(data));
+}
+
 
 void MainWindow::keyPressEvent(QKeyEvent *event) {
   if (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter) {

@@ -1,28 +1,29 @@
 #ifndef LOGGER_H
 #define LOGGER_H
 
-#include <QObject>
-#include <QTextEdit>
+#include <QString>
+
+class ILogOutput {
+public:
+  virtual ~ILogOutput() = default;
+  virtual void write(const QString& message) = 0;
+};
 
 class Logger {
-
-private:
-  QTextEdit* logWidget;
-
 public:
-
   enum LogLevel {
     INFO,
     WARNING,
     ERROR
   };
 
-  Logger();
-  void setLogWidget(QTextEdit* widget);
+  Logger(ILogOutput* output = nullptr);
+  void setLogOutput(ILogOutput* output);
   void log(const QString& message, LogLevel level = INFO);
 
 private:
   QString logLevelToString(LogLevel level) const;
+  ILogOutput* logOutput;
 };
 
 #endif // LOGGER_H

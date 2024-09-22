@@ -18,7 +18,7 @@ public:
   ~SerialPortModel();
 
   void setPorts(const QString& firstPortName, const QString& secondPortName);
-  void setParity(const QString &parity);
+  void setParity(const QString& parity);
   void sendData(const QByteArray& data);
 
 signals:

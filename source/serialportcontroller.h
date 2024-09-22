@@ -17,19 +17,22 @@ private:
 
 public:
   explicit SerialPortController(SerialPortModel* model,
-    MainWindow* view,
-    Logger* logger,
-    const QList<QPair<QString, QString>>& validPortPairs,
-    QObject* parent = nullptr);
+                                MainWindow* view,
+                                Logger* logger,
+                                const QList<QPair<QString, QString>>& validPortPairs,
+                                QObject* parent = nullptr);
 
   void initializeLogger();
+
+  void sendFrame(const QByteArray& data);
+  void receiveFrame(const QByteArray& data);
 
 private:
   bool arePortsValid(const QString& firstPortName, const QString& secondPortName);
 
 public slots:
   void setPorts(const QString& firstPortName, const QString& secondPortName);
-  void setParity(const QString &parity);
+  void setParity(const QString& parity);
   void sendData(const QByteArray& data);
 
 private slots:

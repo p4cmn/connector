@@ -1,0 +1,10 @@
+release/frame.o
+release/logger.o
+release/main.o
+release/mainwindow.o
+release/serialportcontroller.o
+release/serialportmodel.o
+release/qrc_resources.o
+release/moc_mainwindow.o
+release/moc_serialportcontroller.o
+release/moc_serialportmodel.o

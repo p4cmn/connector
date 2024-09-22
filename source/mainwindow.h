@@ -1,10 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
+#include "frame.h"
+#include "logger.h"
 #include <QKeyEvent>
 #include <QTextEdit>
-#include "logger.h"
+#include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,7 +20,13 @@ public:
 
   QString getSelectedFirstPort() const;
   QString getSelectedSecondPort() const;
+  QString getReceivedData() const;
   QTextEdit* getLogWidget() const;
+
+  void displayFrameInStatus(const Frame& frame);
+  void displayDataInOutput(const QByteArray& data);
+  void displayRawFrameInStatus(const QByteArray& rawFrameData);
+  void clearFrameStatus();
 
 protected:
   void keyPressEvent(QKeyEvent* event) override;

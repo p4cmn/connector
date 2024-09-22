@@ -1,5 +1,3 @@
-#include "mainwindow.h"
-
 #include <QApplication>
 #include "mainwindow.h"
 #include "serialportmodel.h"
@@ -18,6 +16,7 @@ int main(int argc, char *argv[]) {
   Logger logger;
 
   SerialPortController controller(&model, &view, &logger, validPortPairs);
+
   view.show();
 
   return a.exec();

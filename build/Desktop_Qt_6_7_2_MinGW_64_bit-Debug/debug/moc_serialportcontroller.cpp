@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../../serialportcontroller.h"
+#include "../../../source/serialportcontroller.h"
 #include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
 
