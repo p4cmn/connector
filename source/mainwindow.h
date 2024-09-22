@@ -25,7 +25,7 @@ public:
 
   void displayFrameInStatus(const Frame& frame);
   void displayDataInOutput(const QByteArray& data);
-  void displayRawFrameInStatus(const QByteArray& rawFrameData);
+  void displayRawFrameInStatus(const QString& rawFrameData);
   void clearFrameStatus();
 
 protected:

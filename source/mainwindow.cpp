@@ -62,8 +62,8 @@ void MainWindow::displayFrameInStatus(const Frame& frame) {
   ui->frameTextEdit->append(frameInfo);
 }
 
-void MainWindow::displayRawFrameInStatus(const QByteArray& rawFrameData) {
-  QString rawFrameInfo = QString("Raw Frame Data: %1").arg(QString::fromUtf8(rawFrameData.toHex(' ')));
+void MainWindow::displayRawFrameInStatus(const QString& formattedData) {
+  QString rawFrameInfo = QString("Raw Frame Data: %1").arg(formattedData);
   ui->frameTextEdit->append(rawFrameInfo);
 }
 

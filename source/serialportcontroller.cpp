@@ -1,4 +1,5 @@
 #include "frame.h"
+#include "formatEscape.h"
 #include "bytestuffing.h"
 #include "fragmentation.h"
 #include "textwidgetoutput.h"
@@ -35,14 +36,18 @@ void SerialPortController::sendFrame(const QByteArray &data) {
 
   for (Frame& frame : frames) {
     QByteArray byteArray = serializeFrame(frame);
-    byteArray = applyByteStuffing(byteArray);
-    combinedData.append(byteArray);
+    QByteArray stuffedData = byteArray.left(FLAG_SIZE);
+    stuffedData.append(applyByteStuffing(byteArray.mid(FLAG_SIZE)));
+    combinedData.append(stuffedData);
   }
   model->sendData(combinedData);
+  logMessage("Data sent successfully", Logger::INFO);
 }
 
 void SerialPortController::receiveFrame(const QByteArray& byteArray) {
   view->clearFrameStatus();
+  QString hexData = formatDataWithEscaping(byteArray, 0x1B);
+  view->displayRawFrameInStatus(hexData);
   QByteArray cleanedData = removeByteStuffing(byteArray);
   int frameSize = sizeof(Frame::flag) + sizeof(Frame::sourceAddress) +
                   sizeof(Frame::destinationAddress) + DATA_SIZE + sizeof(Frame::FCS);
@@ -63,6 +68,7 @@ void SerialPortController::receiveFrame(const QByteArray& byteArray) {
   }
   QByteArray completeData = defragmentData(frames);
   view->displayDataInOutput(completeData);
+  logMessage("Frame received and processed", Logger::INFO);
 }
 
 
@@ -85,6 +91,7 @@ void SerialPortController::setParity(const QString& parity) {
 }
 
 void SerialPortController::sendData(const QByteArray& data) {
+  logMessage("Sending data...", Logger::INFO);
   sendFrame(data);
 }
 
@@ -99,6 +106,7 @@ bool SerialPortController::arePortsValid(const QString& firstPortName, const QSt
 }
 
 void SerialPortController::onDataReceived(const QByteArray& data) {
+  logMessage("Data received", Logger::INFO);
   receiveFrame(data);
 }
 

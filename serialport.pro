@@ -18,6 +18,7 @@ SOURCES += \
 
 HEADERS += \
     source/bytestuffing.h \
+    source/formatEscape.h \
     source/fragmentation.h \
     source/frame.h \
     source/logger.h \

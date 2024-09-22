@@ -2,9 +2,9 @@
 #define SERIALPORTCONTROLLER_H
 
 #include <QObject>
-#include "serialportmodel.h"
-#include "mainwindow.h"
 #include "logger.h"
+#include "mainwindow.h"
+#include "serialportmodel.h"
 
 class SerialPortController : public QObject {
   Q_OBJECT

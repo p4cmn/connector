@@ -36,7 +36,6 @@ QByteArray defragmentData(const QList<Frame>& frames) {
   QByteArray completeData;
 
   for (const Frame& frame : frames) {
-    // Извлекаем данные каждого кадра, удаляя нули
     QByteArray dataWithoutNulls(reinterpret_cast<const char*>(frame.data.data()), DATA_SIZE);
     dataWithoutNulls = dataWithoutNulls.replace('\0', "");
     completeData.append(dataWithoutNulls);
