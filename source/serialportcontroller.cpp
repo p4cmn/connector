@@ -44,18 +44,28 @@ void SerialPortController::sendFrame(const QByteArray &data) {
 void SerialPortController::receiveFrame(const QByteArray& byteArray) {
   view->clearFrameStatus();
   QByteArray cleanedData = removeByteStuffing(byteArray);
-  int frameSize = sizeof(Frame::flag) + sizeof(Frame::sourceAddress) + sizeof(Frame::destinationAddress) + DATA_SIZE + sizeof(Frame::FCS);
-  int totalFrames = cleanedData.size() / frameSize;
+  int frameSize = sizeof(Frame::flag) + sizeof(Frame::sourceAddress) +
+                  sizeof(Frame::destinationAddress) + DATA_SIZE + sizeof(Frame::FCS);
+  int dataSize = cleanedData.size();
   QList<Frame> frames;
-  for (int i = 0; i < totalFrames; ++i) {
-    QByteArray frameData = cleanedData.mid(i * frameSize, frameSize);
-    Frame frame = deserializeFrame(frameData);
-    view->displayFrameInStatus(frame);
-    frames.append(frame);
+  int i = 0;
+
+  while (i <= dataSize - frameSize) {
+    if (cleanedData[i] == '$' && cleanedData[i + 1] == 'j') {
+      QByteArray frameData = cleanedData.mid(i, frameSize);
+      Frame frame = deserializeFrame(frameData);
+      view->displayFrameInStatus(frame);
+      frames.append(frame);
+      i += frameSize;
+    } else {
+      i++;
+    }
   }
   QByteArray completeData = defragmentData(frames);
   view->displayDataInOutput(completeData);
 }
+
+
 
 void SerialPortController::setPorts(const QString& firstPortName, const QString& secondPortName) {
   if (arePortsValid(firstPortName, secondPortName)) {
