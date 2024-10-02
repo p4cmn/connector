@@ -4,6 +4,9 @@
 #include "serialportscanner.h"
 #include "serialportcontroller.h"
 
+// #include "FCSOperations.h"
+// #include <QDebug>
+
 int main(int argc, char *argv[]) {
   QApplication a(argc, argv);
   a.setWindowIcon(QIcon(":/icons/comIcon.ico"));
@@ -20,4 +23,16 @@ int main(int argc, char *argv[]) {
   view.show();
 
   return a.exec();
+  // QVector<bool> dataBits = {1, 1, 0, 1};  // Данные 1101000
+  // QVector<bool> pol = {1, 0, 1, 1};
+  // QVector<bool> shift = shiftBits(dataBits, 3);
+  // QVector<bool> rem = divideByPolynomial(shift, pol);
+  // QVector<bool> resultBits = addRemainderToData(shift, rem);
+
+  // // Выводим результат
+  // qDebug() << "Результат:";
+  // for (bool bit : resultBits) {
+  //   qDebug() << bit;
+  // }
 }
+

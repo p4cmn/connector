@@ -1,4 +1,4 @@
-#include "frame.h"
+
 #include "formatEscape.h"
 #include "bytestuffing.h"
 #include "fragmentation.h"
@@ -49,16 +49,18 @@ void SerialPortController::receiveFrame(const QByteArray& byteArray) {
   QString hexData = formatDataWithEscaping(byteArray, 0x1B);
   view->displayRawFrameInStatus(hexData);
   QByteArray cleanedData = removeByteStuffing(byteArray);
-  int frameSize = sizeof(Frame::flag) + sizeof(Frame::sourceAddress) +
-                  sizeof(Frame::destinationAddress) + DATA_SIZE + sizeof(Frame::FCS);
+  int frameSize = FLAG_SIZE + sizeof(Frame::sourceAddress) +
+                  sizeof(Frame::destinationAddress) + DATA_SIZE + FCS_SIZE;
   int dataSize = cleanedData.size();
   QList<Frame> frames;
   int i = 0;
-
   while (i <= dataSize - frameSize) {
     if (cleanedData[i] == '$' && cleanedData[i + 1] == 'j') {
       QByteArray frameData = cleanedData.mid(i, frameSize);
       Frame frame = deserializeFrame(frameData);
+
+      //corruptRandomBit(frame.data);
+      distortRandomBit(frame.data);
       view->displayFrameInStatus(frame);
       frames.append(frame);
       i += frameSize;
@@ -70,8 +72,6 @@ void SerialPortController::receiveFrame(const QByteArray& byteArray) {
   view->displayDataInOutput(completeData);
   logMessage("Frame received and processed", Logger::INFO);
 }
-
-
 
 void SerialPortController::setPorts(const QString& firstPortName, const QString& secondPortName) {
   if (arePortsValid(firstPortName, secondPortName)) {

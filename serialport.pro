@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    source/FCSOperations.cpp \
     source/frame.cpp \
     source/logger.cpp \
     source/main.cpp \
@@ -17,6 +18,7 @@ SOURCES += \
     source/serialportmodel.cpp
 
 HEADERS += \
+    source/FCSOperations.h \
     source/bytestuffing.h \
     source/formatEscape.h \
     source/fragmentation.h \

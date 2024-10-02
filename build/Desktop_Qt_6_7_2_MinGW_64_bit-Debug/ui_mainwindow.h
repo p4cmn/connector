@@ -67,7 +67,7 @@ public:
     QComboBox *paritySelector;
     QSpacerItem *horizontalSpacer_24;
     QSpacerItem *verticalSpacer_3;
-    QFrame *frame;
+    QFrame *frame1;
     QVBoxLayout *verticalLayout_3;
     QVBoxLayout *verticalLayout_6;
     QHBoxLayout *horizontalLayout;
@@ -87,7 +87,7 @@ public:
     QSpacerItem *horizontalSpacer_31;
     QTextEdit *outputField;
     QSpacerItem *horizontalSpacer_32;
-    QFrame *frame1;
+    QFrame *frame;
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout_9;
     QSpacerItem *horizontalSpacer_13;
@@ -361,17 +361,17 @@ public:
 
         horizontalLayout_18->addLayout(verticalLayout_5);
 
-        frame = new QFrame(centralwidget);
-        frame->setObjectName("frame");
-        frame->setMinimumSize(QSize(350, 0));
-        frame->setStyleSheet(QString::fromUtf8("QFrame {\n"
+        frame1 = new QFrame(centralwidget);
+        frame1->setObjectName("frame1");
+        frame1->setMinimumSize(QSize(350, 0));
+        frame1->setStyleSheet(QString::fromUtf8("QFrame {\n"
 "    border: 2px solid #4a4a4a; /* \320\241\320\262\320\265\321\202\320\273\320\276-\321\201\320\265\321\200\320\260\321\217 \321\200\320\260\320\274\320\272\320\260 */\n"
 "    border-radius: 5px; /* \320\241\320\272\321\200\321\203\320\263\320\273\320\265\320\275\320\275\321\213\320\265 \321\203\320\263\320\273\321\213 */\n"
 "    background-color: #333333; /* \320\242\320\265\320\274\320\275\321\213\320\271 \321\204\320\276\320\275 */\n"
 "    padding: 5px; /* \320\222\320\275\321\203\321\202\321\200\320\265\320\275\320\275\320\270\320\271 \320\276\321\202\321\201\321\202\321\203\320\277 */\n"
 "    color: #ffffff; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
 "}"));
-        verticalLayout_3 = new QVBoxLayout(frame);
+        verticalLayout_3 = new QVBoxLayout(frame1);
         verticalLayout_3->setObjectName("verticalLayout_3");
         verticalLayout_6 = new QVBoxLayout();
         verticalLayout_6->setObjectName("verticalLayout_6");
@@ -381,7 +381,7 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_25);
 
-        label_7 = new QLabel(frame);
+        label_7 = new QLabel(frame1);
         label_7->setObjectName("label_7");
         label_7->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    color: #FFFFFF; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
@@ -403,7 +403,7 @@ public:
 
         horizontalLayout_14->addItem(horizontalSpacer_27);
 
-        portSelector2 = new QComboBox(frame);
+        portSelector2 = new QComboBox(frame1);
         portSelector2->setObjectName("portSelector2");
         sizePolicy.setHeightForWidth(portSelector2->sizePolicy().hasHeightForWidth());
         portSelector2->setSizePolicy(sizePolicy);
@@ -439,7 +439,7 @@ public:
 
         horizontalLayout_15->addItem(horizontalSpacer_29);
 
-        label_8 = new QLabel(frame);
+        label_8 = new QLabel(frame1);
         label_8->setObjectName("label_8");
         label_8->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    color: #FFFFFF; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
@@ -461,7 +461,7 @@ public:
 
         horizontalLayout_16->addItem(horizontalSpacer_31);
 
-        outputField = new QTextEdit(frame);
+        outputField = new QTextEdit(frame1);
         outputField->setObjectName("outputField");
         outputField->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
 "    background-color: #2B2B2B; /* \320\242\320\265\320\274\320\275\321\213\320\271 \321\204\320\276\320\275 */\n"
@@ -482,20 +482,20 @@ public:
         verticalLayout_3->addLayout(horizontalLayout_16);
 
 
-        horizontalLayout_18->addWidget(frame);
+        horizontalLayout_18->addWidget(frame1);
 
 
         verticalLayout_7->addLayout(horizontalLayout_18);
 
-        frame1 = new QFrame(centralwidget);
-        frame1->setObjectName("frame1");
-        frame1->setStyleSheet(QString::fromUtf8("QFrame {\n"
+        frame = new QFrame(centralwidget);
+        frame->setObjectName("frame");
+        frame->setStyleSheet(QString::fromUtf8("QFrame {\n"
 "    border: 2px solid #4a4a4a; /* \320\241\320\262\320\265\321\202\320\273\320\276-\321\201\320\265\321\200\320\260\321\217 \321\200\320\260\320\274\320\272\320\260 */\n"
 "    border-radius: 5px; /* \320\241\320\272\321\200\321\203\320\263\320\273\320\265\320\275\320\275\321\213\320\265 \321\203\320\263\320\273\321\213 */\n"
 "    background-color: #333333; /* \320\242\320\265\320\274\320\275\321\213\320\271 \321\204\320\276\320\275 */\n"
 "    padding: 5px; /* \320\222\320\275\321\203\321\202\321\200\320\265\320\275\320\275\320\270\320\271 \320\276\321\202\321\201\321\202\321\203\320\277 */\n"
 "}"));
-        verticalLayout_2 = new QVBoxLayout(frame1);
+        verticalLayout_2 = new QVBoxLayout(frame);
         verticalLayout_2->setObjectName("verticalLayout_2");
         horizontalLayout_9 = new QHBoxLayout();
         horizontalLayout_9->setObjectName("horizontalLayout_9");
@@ -503,7 +503,7 @@ public:
 
         horizontalLayout_9->addItem(horizontalSpacer_13);
 
-        label_3 = new QLabel(frame1);
+        label_3 = new QLabel(frame);
         label_3->setObjectName("label_3");
         label_3->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    color: #FFFFFF; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
@@ -525,7 +525,7 @@ public:
 
         horizontalLayout_10->addItem(horizontalSpacer_15);
 
-        label_4 = new QLabel(frame1);
+        label_4 = new QLabel(frame);
         label_4->setObjectName("label_4");
         QSizePolicy sizePolicy1(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Preferred);
         sizePolicy1.setHorizontalStretch(0);
@@ -540,7 +540,7 @@ public:
 
         horizontalLayout_10->addWidget(label_4);
 
-        speedLabel = new QLabel(frame1);
+        speedLabel = new QLabel(frame);
         speedLabel->setObjectName("speedLabel");
         speedLabel->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    color: #FFFFFF; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
@@ -562,7 +562,7 @@ public:
 
         horizontalLayout_11->addItem(horizontalSpacer_16);
 
-        label_5 = new QLabel(frame1);
+        label_5 = new QLabel(frame);
         label_5->setObjectName("label_5");
         label_5->setEnabled(true);
         sizePolicy1.setHeightForWidth(label_5->sizePolicy().hasHeightForWidth());
@@ -575,7 +575,7 @@ public:
 
         horizontalLayout_11->addWidget(label_5);
 
-        bytesLabel = new QLabel(frame1);
+        bytesLabel = new QLabel(frame);
         bytesLabel->setObjectName("bytesLabel");
         bytesLabel->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    color: #FFFFFF; /* \320\221\320\265\320\273\321\213\320\271 \321\202\320\265\320\272\321\201\321\202 */\n"
@@ -597,7 +597,7 @@ public:
 
         horizontalLayout_2->addItem(horizontalSpacer_17);
 
-        label_9 = new QLabel(frame1);
+        label_9 = new QLabel(frame);
         label_9->setObjectName("label_9");
 
         horizontalLayout_2->addWidget(label_9);
@@ -615,7 +615,7 @@ public:
 
         horizontalLayout_17->addItem(horizontalSpacer_33);
 
-        frameTextEdit = new QTextEdit(frame1);
+        frameTextEdit = new QTextEdit(frame);
         frameTextEdit->setObjectName("frameTextEdit");
         frameTextEdit->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
 "    background-color: #2B2B2B; /* \320\242\320\265\320\274\320\275\321\213\320\271 \321\204\320\276\320\275 */\n"
@@ -625,6 +625,7 @@ public:
 "    padding: 5px; /* \320\222\320\275\321\203\321\202\321\200\320\265\320\275\320\275\320\270\320\265 \320\276\321\202\321\201\321\202\321\203\320\277\321\213 */\n"
 "}\n"
 ""));
+        frameTextEdit->setReadOnly(true);
 
         horizontalLayout_17->addWidget(frameTextEdit);
 
@@ -641,7 +642,7 @@ public:
 
         horizontalLayout_8->addItem(horizontalSpacer_11);
 
-        logWidget = new QTextEdit(frame1);
+        logWidget = new QTextEdit(frame);
         logWidget->setObjectName("logWidget");
         logWidget->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
 "    background-color: #2B2B2B; /* \320\242\320\265\320\274\320\275\321\213\320\271 \321\204\320\276\320\275 */\n"
@@ -651,6 +652,7 @@ public:
 "    padding: 5px; /* \320\222\320\275\321\203\321\202\321\200\320\265\320\275\320\275\320\270\320\265 \320\276\321\202\321\201\321\202\321\203\320\277\321\213 */\n"
 "}\n"
 ""));
+        logWidget->setReadOnly(true);
 
         horizontalLayout_8->addWidget(logWidget);
 
@@ -666,7 +668,7 @@ public:
         verticalLayout_2->addItem(verticalSpacer_5);
 
 
-        verticalLayout_7->addWidget(frame1);
+        verticalLayout_7->addWidget(frame);
 
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);

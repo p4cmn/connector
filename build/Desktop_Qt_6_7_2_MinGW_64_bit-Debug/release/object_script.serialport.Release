@@ -1,3 +1,4 @@
+release/FCSOperations.o
 release/frame.o
 release/logger.o
 release/main.o

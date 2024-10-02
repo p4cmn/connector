@@ -52,12 +52,11 @@ void MainWindow::clearFrameStatus() {
 }
 
 void MainWindow::displayFrameInStatus(const Frame& frame) {
-  QString frameInfo = QString("Flag: %1%2 | Source: %3 | Destination: %4 | Data: %5 | FCS: %6")
-  .arg(static_cast<char>(frame.flag[0]))
-      .arg(static_cast<char>(frame.flag[1]))
+  QString frameInfo = QString("Flag: %1 | Source: %2 | Destination: %3 | Data: %4 | FCS: %5")
+      .arg(QString::fromUtf8(frame.flag))
       .arg(frame.sourceAddress)
       .arg(frame.destinationAddress)
-      .arg(QString::fromUtf8(reinterpret_cast<const char*>(frame.data.data()), DATA_SIZE).trimmed())
+      .arg(QString::fromUtf8(frame.data).trimmed())
       .arg(frame.FCS);
   ui->frameTextEdit->append(frameInfo);
 }

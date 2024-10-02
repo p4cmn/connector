@@ -1,3 +1,4 @@
+debug/FCSOperations.o
 debug/frame.o
 debug/logger.o
 debug/main.o
