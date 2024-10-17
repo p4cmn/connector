@@ -71,7 +71,6 @@ void addRemainder(vector<bool> &shiftedBitArray, const vector<bool> &remainder) 
     size_t bitIndex = shiftedBitArray.size() - remainder.size();
     shiftedBitArray[bitIndex + i] = remainder[i];
   }
-  std::cout << std::endl;
 }
 
 QByteArray generateFCS(const QByteArray& data, const vector<bool>& polynomial) {
